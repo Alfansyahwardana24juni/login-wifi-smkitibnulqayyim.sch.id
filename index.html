@@ -3,51 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
+    
     <link rel="stylesheet" href="style.css" />
-    <title>Sign in </title>
+    <title>Sign in</title>
   </head>
   <body>
     <div class="container">
-      <div class="forms-container">
-        
+      <div class="forms-container">     
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
-            <img class="logo" src="img/logo_smkit-removebg-preview (1).png" alt="logo">
+            <img class="logo" src="img/SMKIT IQIS Logo.png" alt="logo" >
             <h2 class="title">Wifi SMK</h2>
             <div class="input-field">
-              <img  class="fa-user" src="img/user-solid (2).svg" alt="">
+              <img class="fa-user" src="img/user-solid (2).svg" alt="">
               <input type="text" placeholder="Username" />
             </div>
             <div class="input-field">
              <img class="fa-lock" src="img/lock-solid.svg" alt="">
-              <input type="password" placeholder="Password" />
+              <input type="password" id="passwordInput" placeholder="Password" pattern="[0-9]*" />
+              <span class="eye-icon" onclick="togglePassword()"></span>
             </div> 
-            <input type="submit" value="Login" class="btn solid" />
-              
-            </div>
+            <input type="submit" value="Login" class="btn solid" />  
           </form>
         </div>
       </div>
-
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-
           </div>
-          <img src="img/Programming-amico.png" class="image" alt="" />
+          <img src="img/Programming-amico.svg" class="image" alt="" />
+        </div>  
+        <div>
+          <a href="#" class="guest">
+            <img src="img/user-solid (2).svg" height="60px" width="30px" alt="Guest">
+          </a>
         </div>
-   
-   <div>
-    <a href="#"
-        class="guest">
-        <img src="img/user-solid (2).svg" height="60px" width="30px " alt="Guest">
+      </div>
+    </div>
+    <footer>
+      <p class="copy-footer">created by Alfansyah Wardhana.2023</p>
+    </footer>
 
-    </a>
-</div>
-    <script src="app.js"></script>
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById('passwordInput');
+        passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+
+        const eyeIcon = document.querySelector('.eye-icon');
+        eyeIcon.classList.toggle('hide-password');
+      }
+    </script>
   </body>
 </html>

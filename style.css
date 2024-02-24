@@ -13,8 +13,8 @@ input {
 .guest,
 .img- {
   position: absolute;
-  top: 3%;
-  right: 3%;
+  top: 2%;
+  right: 2%;
   cursor: pointer;
 }
 
@@ -72,6 +72,7 @@ form.sign-up-form {
 form.sign-in-form {
   z-index: 2;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -79,11 +80,12 @@ form.sign-in-form {
   flex-direction: column;
   position: absolute;
   bottom: 20rem;
-  padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  width: 300px;
+  height: auto;
 }
 .title {
   font-size: 2.2rem;
@@ -128,7 +130,7 @@ form.sign-in-form {
 
 .btn {
   width: 150px;
-  background-color: #006634;
+  background-color: #7796b5;
   border: none;
   outline: none;
   height: 49px;
@@ -142,7 +144,7 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #006634;
+  background-color: #7796b5;
 }
 .panels-container {
   position: absolute;
@@ -162,7 +164,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #006634 0%, #006634 100%);
+  background-image: linear-gradient(-45deg, #7796b5 0%, #7796b5 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -209,59 +211,21 @@ form.sign-in-form {
   font-size: 1.5rem;
 }
 
-.panel p {
-  font-size: 0.95rem;
-  padding: 0.7rem 0;
+footer {
+  text-align: center;
+
+  z-index: 10; /* Atur nilai z-index yang lebih tinggi dari elemen-elemen lain */
+  color: rgba(0, 0, 0, 0.5); /* Warna teks footer */
+
 }
 
-.btn.transparent {
-  margin: 0;
-  background: none;
-  border: 2px solid #fff;
-  width: 130px;
-  height: 41px;
-  font-weight: 600;
-  font-size: 0.8rem;
+.copy-footer{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-.right-panel .image,
-.right-panel .content {
-  transform: translateX(800px);
-}
-
 /* ANIMATION */
-
-.container.sign-up-mode:before {
-  transform: translate(100%, -50%);
-  right: 52%;
-}
-
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
-  transform: translateX(-100px);
-}
-
-.container.sign-up-mode .signin-signup {
-  left: 25%;
-}
-
-.container.sign-up-mode form.sign-up-form {
-  opacity: 1;
-  z-index: 2;
-}
-
-.container.sign-up-mode form.sign-in-form {
-  opacity: 0;
-  z-index: 1;
-}
-
-.container.sign-up-mode .left-panel {
-  pointer-events: none;
-}
-
-.container.sign-up-mode .right-panel {
-  pointer-events: all;
-}
 
 @media (max-width: 870px) {
   .image {
@@ -292,11 +256,6 @@ form.sign-in-form {
     transform: translateY(-300px);
   }
 
-  .right-panel .image,
-  .right-panel .content {
-    transform: translateY(300px);
-  }
-
   .panels-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 1fr;
@@ -308,10 +267,6 @@ form.sign-in-form {
     align-items: center;
     padding: 2.5rem 8%;
     grid-column: 1 / 2;
-  }
-
-  .right-panel {
-    grid-row: 3 / 4;
   }
 
   .left-panel {
@@ -383,6 +338,9 @@ form.sign-in-form {
     top: 80%; /* Adjust the value to move the pseudo-element below the main content */
     transition: 2s ease-in-out;
   }
+  .copy-footer {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 @media (max-width: 570px) {
@@ -422,5 +380,10 @@ form.sign-in-form {
     top: 2%;
     right: 6%;
     cursor: pointer;
+  }
+  
+  .copy-footer {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
   }
 }
